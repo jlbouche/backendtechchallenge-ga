@@ -14,7 +14,11 @@ app.listen(port, () => {
 })
 
 function allAttendees(req, res){
-    res.send(attendees)
+    let attendeesArr = []
+    attendees.forEach(elem => {
+        attendeesArr.push(elem.name)
+    })
+    res.send(`${attendeesArr}`)
 }
 
 app.get("/", (allAttendees))
