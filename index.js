@@ -32,7 +32,11 @@ app.get('/team/:id', (req, res) => {
             teamArr.push(elem.name)
         }
     })
-    res.send(`${teamArr}`)
+    if (teamArr.length > 0) {
+        res.send(`${teamArr}`)
+    } else {
+        res.send(`Sorry, there is no team ${id}`)
+    }
 });
 
 app.get('/company/:id', (req, res) => {
@@ -43,5 +47,9 @@ app.get('/company/:id', (req, res) => {
             companyArr.push(elem.name)
         }
     })
-    res.send(`${companyArr}`)
+    if (companyArr.length >0){
+        res.send(`${companyArr}`)
+    } else {
+        res.send(`Sorry, we have no attendees from ${id}`)
+    }
 })
