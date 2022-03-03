@@ -4,7 +4,8 @@ let attendeeCtrl = require('../controllers/attendees')
 
 router.get('/', attendeeCtrl.index);
 router.get('/new', attendeeCtrl.new);
-router.get('/:id', attendeeCtrl.show);
-router.post('/', attendeeCtrl.create)
+router.get('/:id', attendeeCtrl.attendeeView);
+router.get('/team/:id', attendeeCtrl.teamView);
+router.post('/', attendeeCtrl.create);
 
 module.exports = router;
